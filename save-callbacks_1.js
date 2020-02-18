@@ -1,39 +1,38 @@
-// Example 1 - In this example, both functions run
-// as expected one after the other
+// Example 1 – Two functions: 1. Create a new post & 2. Display all posts
+
+// Start with 2 existing posts
 
 const posts = [
-    { title: "Post One", body: "This is Post One" },
-    { title: "Post Two", body: "This is Post Two" }
+    { title: "Post One", body: "Existing Post" },
+    { title: "Post Two", body: "Existing Post" }
 
 ];
 
 
-// Create a function that takes in a new post
+// Function 1 - Create a new post
 
 function createPost(post) {
          let output = '';
         posts.push(post);
 }
 
+// Function 2 -Display all posts
 
 function getPosts() {
    
         let output = '';
-        posts.forEach(function(post, index) {
-            output += `<li>${index} - ${post.title}, ${post.body}</li>`;
+        posts.forEach(function(post) {
+            output += `<p><strong>${post.title}</strong> = ${post.body}</p>`;
         });
         document.body.innerHTML = output;
 }
 
+// Call Function 1 to Create a post
+
+createPost({ title: "Post Three", body: "Newly Created Post" });
 
 
 
-// Create a post
-
-createPost({ title: "Post Three", body: "This is Post Three" });
-
-
-
-// Get the posts and display on screen
+// Call Function 2 to Get the posts and display on screen
 
 getPosts();

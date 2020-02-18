@@ -6,8 +6,8 @@
 
 
 const posts = [
-    { title: "Post One", body: "This is Post One" },
-    { title: "Post Two", body: "This is Post Two" }
+    { title: "Post One", body: "Existing Post" },
+    { title: "Post Two", body: "Existing Post" }
 
 ];
 
@@ -43,7 +43,7 @@ function getPosts() {
     setTimeout(function() {
         let output = '';
         posts.forEach(function(post, index) {
-            output += `<li>${post.title}</li>`;
+            output += `<p><strong>${post.title}</strong> - ${post.body}</p>`;
         });
         document.body.innerHTML = output;
         
@@ -57,4 +57,11 @@ function getPosts() {
 // Add 'getPosts' as the callback function to 'createPost', instead of calling
 // 'getPosts' separately
 
-createPost({ title: "Post Three", body: "This is Post Three" }, getPosts);
+createPost({ title: "Post Three", body: "Newly Created Post" }, getPosts);
+
+
+
+
+
+
+

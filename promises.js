@@ -1,4 +1,4 @@
-// Example 1 - Promises
+// Promises
 // In this example I'm using promises to ensure one function only starts after
 // another is completed
 
@@ -34,7 +34,7 @@ function createPost(post) {
 
             // Artificially setting the error code to 'true' or 'false'
 
-            const error = false;
+            const error = true;
 
             if (!error) {
                 // If not an error:

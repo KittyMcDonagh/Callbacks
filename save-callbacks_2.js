@@ -1,23 +1,13 @@
-// Example 2 - In this example, 'getPosts' is called before 'createPost'. 
-// 'getPosts' finishes before 'createPost'
+// Example 2 – Call Function 2 first, Then Function 1
 
 const posts = [
-    { title: "Post One", body: "This is Post One" },
-    { title: "Post Two", body: "This is Post Two" }
+    { title: "Post One", body: "Existing Post" },
+    { title: "Post Two", body: "Existing Post" }
 
 ];
 
 
-function getPosts() {
-   
-        let output = '';
-        posts.forEach(function(post, index) {
-            output += `<li>${index} - ${post.title}, ${post.body}</li>`;
-        });
-        document.body.innerHTML = output;
-}
-
-// Create a function that takes in a new post
+// Function 1 - Create a new post
 
 function createPost(post) {
     
@@ -26,25 +16,24 @@ function createPost(post) {
 }
 
 
-// Get the posts and display on screen
+// Function 2 -Display all posts
+
+function getPosts() {
+   
+        let output = '';
+        posts.forEach(function(post) {
+            output += `<p><strong>${post.title}</strong> = ${post.body}</p>`;
+        });
+        document.body.innerHTML = output;
+}
+
+
+// Call Function 2 to Get the posts and display on screen
 
 getPosts();
 
-// Create a post
 
-createPost({ title: "Post Three", body: "This is Post Three" });
+// Call Function 1 to Create a post
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+createPost({ title: "Post Three", body: "Newly Created Post" });
 
